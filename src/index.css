@@ -172,3 +172,56 @@
       0 0 60px #123f9a;
   }
 }
+
+/* Enhanced mobile glow for FRESHMEN with minimized stroke */
+@media (max-width: 768px) {
+  .freshmen-glow-mobile {
+    text-shadow: 
+      -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffffff,
+      0 -1px 0 #ffffff,
+      0 1px 0 #ffffff,
+      -1px 0 0 #ffffff,
+      1px 0 0 #ffffff,
+      0 0 25px #123f9a,
+      0 0 50px #123f9a,
+      0 0 75px #123f9a,
+      0 0 100px #123f9a;
+    animation: freshmen-glow-pulse-mobile 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes freshmen-glow-pulse-mobile {
+  from {
+    text-shadow: 
+      -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffffff,
+      0 -1px 0 #ffffff,
+      0 1px 0 #ffffff,
+      -1px 0 0 #ffffff,
+      1px 0 0 #ffffff,
+      0 0 25px #123f9a,
+      0 0 50px #123f9a,
+      0 0 75px #123f9a,
+      0 0 100px #123f9a;
+  }
+  to {
+    text-shadow: 
+      -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffffff,
+      0 -1px 0 #ffffff,
+      0 1px 0 #ffffff,
+      -1px 0 0 #ffffff,
+      1px 0 0 #ffffff,
+      0 0 35px #123f9a,
+      0 0 70px #123f9a,
+      0 0 105px #123f9a,
+      0 0 140px #123f9a;
+  }
+}
