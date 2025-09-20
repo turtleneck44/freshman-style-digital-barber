@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import CRONOS Font */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+/* Import Professional Barbershop Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&family=Anton:wght@400&display=swap');
 
 @layer base {
   :root {
@@ -20,120 +20,155 @@
     --luxury-gray-700: #404040;
     --luxury-gray-800: #262626;
     --luxury-gray-900: #171717;
+    
+    /* Accent Colors */
+    --accent-blue: #123f9a;
+    --accent-red: #ff0000;
+    
+    /* Typography */
+    --font-display: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-condensed: 'Roboto Condensed', sans-serif;
+    --font-bold: 'Anton', sans-serif;
   }
 
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-luxury-white text-luxury-black;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  /* Typography */
-  .font-display {
-    font-family: 'CRONOS SEMI BOLD', 'Inter', sans-serif;
-    font-weight: 600;
-  }
-
-  .font-elegant {
-    font-family: 'CRONOS SEMI BOLD', 'Inter', sans-serif;
-    font-weight: 500;
-  }
-
-  .font-caps {
-    font-family: 'CRONOS SEMI BOLD', 'Inter', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .text-display {
-    @apply text-4xl md:text-5xl lg:text-6xl font-display;
-  }
-
-  .text-elegant {
-    @apply text-lg md:text-xl font-elegant;
-  }
-
-  .text-caps {
-    @apply text-sm font-caps;
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
   }
 }
 
-@layer components {
-  /* Container */
-  .container-luxury {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+/* Typography Classes */
+.font-logo {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.font-display {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.font-body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.font-condensed {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+
+.font-bold {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Luxury Container */
+.container-luxury {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Fade In Animation */
+.fade-in-luxury {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-
-  /* Buttons */
-  .btn-luxury {
-    @apply bg-luxury-black text-luxury-white font-semibold py-3 px-8 rounded-lg hover:bg-luxury-gray-800 transform hover:scale-105 transition-all duration-500 ease-out shadow-lg hover:shadow-xl;
-  }
-
-  .btn-luxury-outline {
-    @apply border-2 border-luxury-black text-luxury-black font-semibold py-3 px-8 rounded-lg hover:bg-luxury-black hover:text-luxury-white transform hover:scale-105 transition-all duration-500 ease-out;
-  }
-
-  /* Cards */
-  .card-luxury {
-    @apply bg-luxury-white rounded-xl shadow-2xl border border-luxury-gray-200 p-8 hover:shadow-3xl transition-all duration-700 ease-out;
-  }
-
-  /* Shadows */
-  .shadow-luxury {
-    @apply shadow-2xl;
-  }
-
-  .shadow-luxury-xl {
-    @apply shadow-3xl;
-  }
-
-  /* Animations */
-  .fade-in-luxury {
-    @apply opacity-0 translate-y-8;
-    animation: fadeInUp 1s ease-out forwards;
-  }
-
-  .fade-in-luxury:nth-child(1) { animation-delay: 0.1s; }
-  .fade-in-luxury:nth-child(2) { animation-delay: 0.2s; }
-  .fade-in-luxury:nth-child(3) { animation-delay: 0.3s; }
-  .fade-in-luxury:nth-child(4) { animation-delay: 0.4s; }
-  .fade-in-luxury:nth-child(5) { animation-delay: 0.5s; }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-
-  .shimmer {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .shimmer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    animation: shimmer 2s infinite;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Enhanced Button Styles */
+.btn-luxury-outline {
+  @apply border border-white/40 text-white hover:bg-white hover:text-black transition-all duration-300 font-medium px-8 py-3 uppercase tracking-wide;
+}
+
+.btn-luxury-solid {
+  @apply bg-white text-black font-semibold py-3 px-8 rounded-none hover:bg-white/90 transform hover:scale-105 transition-all duration-300 uppercase tracking-wide;
+}
+
+/* Custom Animations */
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-medium {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-fast {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Optimized FRESHMEN with performance-focused styling */
+.freshmen-glow {
+  text-shadow: 
+    -2px -2px 0 #ffffff,
+    2px -2px 0 #ffffff,
+    -2px 2px 0 #ffffff,
+    2px 2px 0 #ffffff,
+    -1px -1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff,
+    0 -2px 0 #ffffff,
+    0 2px 0 #ffffff,
+    -2px 0 0 #ffffff,
+    2px 0 0 #ffffff,
+    0 0 20px #123f9a,
+    0 0 40px #123f9a;
+  animation: freshmen-glow-pulse 4s ease-in-out infinite alternate;
+  will-change: text-shadow;
+}
+
+@keyframes freshmen-glow-pulse {
+  from {
+    text-shadow: 
+      -2px -2px 0 #ffffff,
+      2px -2px 0 #ffffff,
+      -2px 2px 0 #ffffff,
+      2px 2px 0 #ffffff,
+      -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffffff,
+      0 -2px 0 #ffffff,
+      0 2px 0 #ffffff,
+      -2px 0 0 #ffffff,
+      2px 0 0 #ffffff,
+      0 0 20px #123f9a,
+      0 0 40px #123f9a;
+  }
+  to {
+    text-shadow: 
+      -2px -2px 0 #ffffff,
+      2px -2px 0 #ffffff,
+      -2px 2px 0 #ffffff,
+      2px 2px 0 #ffffff,
+      -1px -1px 0 #ffffff,
+      1px -1px 0 #ffffff,
+      -1px 1px 0 #ffffff,
+      1px 1px 0 #ffffff,
+      0 -2px 0 #ffffff,
+      0 2px 0 #ffffff,
+      -2px 0 0 #ffffff,
+      2px 0 0 #ffffff,
+      0 0 30px #123f9a,
+      0 0 60px #123f9a;
   }
 }
