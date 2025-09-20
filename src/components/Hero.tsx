@@ -1,96 +1,85 @@
-import { Calendar, MapPin, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-barbershop.jpg";
+import React from "react";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Luxury Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          className="w-full h-full object-cover opacity-20"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
-          <img
-            src={heroImage}
-            alt="Modern futuristic barbershop interior"
-            className="w-full h-full object-cover"
-          />
-        </video>
-        <div className="absolute inset-0 video-overlay" />
-        <div className="absolute inset-0 video-glow" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-barbershop-black/20 to-barbershop-black/60" />
-      </div>
-
-      {/* Ultra-Premium Floating Elements */}
-      <div className="absolute top-20 right-20 w-6 h-6 bg-barber-red rounded-full animate-premium-float opacity-80 shadow-ultra" />
-      <div className="absolute top-40 left-16 w-4 h-4 bg-barber-blue rounded-full animate-premium-float opacity-60 shadow-platinum" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-32 right-32 w-3 h-3 bg-barber-gold rounded-full animate-premium-float opacity-70 shadow-luxury" style={{ animationDelay: '4s' }} />
-      <div className="absolute top-60 right-60 w-2 h-2 bg-barber-platinum rounded-full animate-luxury-scale opacity-50" style={{ animationDelay: '1s' }} />
-      <div className="absolute bottom-60 left-60 w-5 h-5 bg-gradient-luxury rounded-full animate-ultra-glow opacity-40" style={{ animationDelay: '3s' }} />
-
+    <section className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden pt-16 md:pt-20">
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 pt-20">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-barber-red/20 text-barber-red px-6 py-3 rounded-full border border-barber-red/30 mb-8 backdrop-luxury hover-glow animate-fade-in-up">
-            <MapPin className="h-5 w-5 animate-glow-pulse" />
-            <span className="text-sm font-bold tracking-wide">MISSISSAUGA'S PREMIER BARBERSHOP</span>
-          </div>
-
-          {/* Ultra-Premium Main Heading */}
-          <h1 className="text-6xl md:text-8xl lg:text-[12rem] font-orbitron font-black text-barbershop-white leading-[0.85] mb-12 animate-fade-in-up-delay tracking-tighter">
-            <span className="block animate-slide-in-left text-ultra-glow">THE</span>
-            <span className="block text-shimmer animate-slide-in-right animate-ultra-glow" style={{ animationDelay: '0.4s' }}>FRESHMAN</span>
-            <span className="block animate-slide-in-left-delay text-luxury">BARBERSHOP</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl md:text-3xl text-barbershop-gray font-light max-w-3xl mb-10 leading-relaxed animate-fade-in-scale-delay">
-            Experience the future of barbering. Premium cuts, classic techniques, 
-            modern atmosphere. <span className="text-barber-gradient font-medium">Where tradition meets innovation.</span>
-          </p>
-
-          {/* Location Info */}
-          <div className="flex flex-wrap items-center gap-8 mb-12 text-barbershop-gray-light animate-slide-in-left-delay">
-            <div className="flex items-center space-x-3 bg-barbershop-black/30 px-4 py-2 rounded-full backdrop-luxury">
-              <MapPin className="h-6 w-6 text-barber-red animate-glow-pulse" />
-              <span className="font-medium">167 Queen Street South, Unit 4, Mississauga</span>
+      <div className="relative z-10 container-luxury w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-16 items-center">
+          {/* Left Column - Text Content (Mobile First, then 60% on desktop) */}
+          <div className="text-center lg:text-left flex flex-col justify-center lg:col-span-6 order-1 lg:order-1">
+            {/* Elegant Subtitle - Blue Accent */}
+            <div className="mb-6 md:mb-8 lg:mb-10 fade-in-luxury">
+              <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold tracking-widest" style={{ color: '#123f9a' }}>
+                THE FRESHMEN BARBERSHOP
+              </p>
             </div>
-            <div className="flex items-center space-x-3 bg-barbershop-black/30 px-4 py-2 rounded-full backdrop-luxury">
-              <Clock className="h-6 w-6 text-barber-blue animate-glow-pulse" />
-              <span className="font-medium">Open 7 Days a Week</span>
+            
+            {/* Main Title - Blue and Red Accent */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-black mb-4 md:mb-6 lg:mb-8 fade-in-luxury leading-tight font-display">
+              <span style={{ color: '#123f9a' }}>Best Barbershop</span>
+              <br />
+              <span style={{ color: '#ff0000' }}>in Mississauga</span>
+            </h1>
+            
+            {/* Elegant Description */}
+            <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 md:mb-8 lg:mb-12 max-w-2xl mx-auto lg:mx-0 fade-in-luxury leading-relaxed">
+              Best barbers to give you the best men's haircuts from classic cuts to clean fades and sharp beards.
+            </p>
+            
+            {/* CTA Buttons - Blue and Red Accent */}
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 fade-in-luxury justify-center lg:justify-start">
+              <button 
+                className="text-sm md:text-base px-6 md:px-8 py-2 md:py-3 border-2 font-semibold rounded-lg hover:scale-105 transform transition-all duration-500 ease-out w-full sm:w-auto"
+                style={{ 
+                  borderColor: '#123f9a', 
+                  color: '#123f9a',
+                  backgroundColor: 'transparent'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#123f9a';
+                  e.target.style.color = 'white';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#123f9a';
+                }}
+              >
+                Book Your Appointment
+              </button>
+              <button 
+                className="font-semibold py-2 md:py-3 px-6 md:px-8 rounded-lg hover:scale-105 transform transition-all duration-500 ease-out text-sm md:text-base w-full sm:w-auto text-white"
+                style={{ backgroundColor: '#ff0000' }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#cc0000';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#ff0000';
+                }}
+              >
+                View Our Services
+              </button>
             </div>
           </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 animate-fade-in-scale" style={{ animationDelay: '1.2s' }}>
-            <Button className="btn-hero text-xl px-12 py-8 shadow-luxury hover-lift">
-              <Calendar className="mr-3 h-6 w-6" />
-              Book Appointment
-            </Button>
-            <Button className="btn-outline-hero text-xl px-12 py-8 backdrop-luxury hover-glow">
-              View Services
-            </Button>
+          
+          {/* Right Column - Video (Mobile Second, then 40% on desktop) */}
+          <div className="order-2 lg:order-2 lg:col-span-4 flex justify-center lg:justify-end">
+            <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-md mx-auto lg:mx-0">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-luxury-xl">
+                <video 
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/vid1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Luxury Decorative Elements */}
-      <div className="absolute top-1/4 right-10 w-48 h-48 bg-barber-red/15 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 left-10 w-56 h-56 bg-barber-blue/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-barber-red/5 to-barber-blue/5 rounded-full blur-3xl animate-glow-pulse" />
-      
-      {/* Premium Grid Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.5) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
       </div>
     </section>
   );
