@@ -173,18 +173,14 @@
   }
 }
 
-/* Enhanced mobile glow for FRESHMEN with minimized stroke */
+/* Minimized mobile stroke for FRESHMEN with enhanced glow */
 @media (max-width: 768px) {
   .freshmen-glow-mobile {
     text-shadow: 
-      -1px -1px 0 #ffffff,
-      1px -1px 0 #ffffff,
-      -1px 1px 0 #ffffff,
-      1px 1px 0 #ffffff,
-      0 -1px 0 #ffffff,
-      0 1px 0 #ffffff,
-      -1px 0 0 #ffffff,
-      1px 0 0 #ffffff,
+      -0.5px -0.5px 0 #ffffff,
+      0.5px -0.5px 0 #ffffff,
+      -0.5px 0.5px 0 #ffffff,
+      0.5px 0.5px 0 #ffffff,
       0 0 25px #123f9a,
       0 0 50px #123f9a,
       0 0 75px #123f9a,
@@ -196,14 +192,10 @@
 @keyframes freshmen-glow-pulse-mobile {
   from {
     text-shadow: 
-      -1px -1px 0 #ffffff,
-      1px -1px 0 #ffffff,
-      -1px 1px 0 #ffffff,
-      1px 1px 0 #ffffff,
-      0 -1px 0 #ffffff,
-      0 1px 0 #ffffff,
-      -1px 0 0 #ffffff,
-      1px 0 0 #ffffff,
+      -0.5px -0.5px 0 #ffffff,
+      0.5px -0.5px 0 #ffffff,
+      -0.5px 0.5px 0 #ffffff,
+      0.5px 0.5px 0 #ffffff,
       0 0 25px #123f9a,
       0 0 50px #123f9a,
       0 0 75px #123f9a,
@@ -211,14 +203,10 @@
   }
   to {
     text-shadow: 
-      -1px -1px 0 #ffffff,
-      1px -1px 0 #ffffff,
-      -1px 1px 0 #ffffff,
-      1px 1px 0 #ffffff,
-      0 -1px 0 #ffffff,
-      0 1px 0 #ffffff,
-      -1px 0 0 #ffffff,
-      1px 0 0 #ffffff,
+      -0.5px -0.5px 0 #ffffff,
+      0.5px -0.5px 0 #ffffff,
+      -0.5px 0.5px 0 #ffffff,
+      0.5px 0.5px 0 #ffffff,
       0 0 35px #123f9a,
       0 0 70px #123f9a,
       0 0 105px #123f9a,

@@ -26,7 +26,7 @@ const Hero = () => {
             {/* Subtitle right under headline with underline */}
             <div className="mb-6 lg:mb-8 fade-in-luxury">
               <div className="relative inline-block">
-                <p className="font-condensed text-xl sm:text-2xl md:text-3xl text-[#ff0000] tracking-widest uppercase font-medium">
+                <p className="font-condensed text-base sm:text-xl md:text-2xl lg:text-3xl text-[#ff0000] tracking-widest uppercase font-medium whitespace-nowrap">
                   Best Barbershop in Mississauga
                 </p>
                 <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#ff0000]"></div>
